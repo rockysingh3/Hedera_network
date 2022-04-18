@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@hashgraph/sdk": "^2.12.1"
+    "@hashgraph/sdk": "^2.12.1",
+    "dotenv": "^16.0.0"
   }
 }
