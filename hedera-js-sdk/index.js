@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const { Client, AccountBalanceQuery } = require("@hashgraph/sdk");
+const { Client, AccountBalanceQuery, Query } = require("@hashgraph/sdk");
 
 async function main() {
   
@@ -29,7 +29,12 @@ async function main() {
     // get your balance
     const balance = await new AccountBalanceQuery()
       .setAccountId(myAccountId)
-      .execute(client);
+
+    //Sign with the client operator private key and submit to a Hedera network
+    const tokenBalance = await balance.execute(client);
+
+
+    console.log(`${myAccountId} balance = ${tokenBalance.tokens.toString()}`);
     
   } catch (e) {
     console.log(e);
