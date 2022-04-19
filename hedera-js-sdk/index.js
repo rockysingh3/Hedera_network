@@ -24,7 +24,9 @@ async function main() {
 
     client.setOperator(myAccountId, myPrivateKey);
 
-    // Now the connection to the hedera network is established
+
+    // this is the link to the docs for balance 
+    // https://docs.hedera.com/guides/docs/sdks/cryptocurrency/get-account-balance
 
     // get your balance
     const balance = await new AccountBalanceQuery()
